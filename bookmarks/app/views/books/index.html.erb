@@ -1,0 +1,15 @@
+<% @books.each do |book| %>
+  <div class="book">
+    <div class="row">
+      <div class="col-md-10"> <!-- Adjusted column size for content -->
+        <p class="rank-this-week">Rank this week: <%= book.rank_this_week %></p>
+        <p class="title">Title: <%= book.title %></p>
+        <p class="author">Author: by <%= book.author %></p>
+        <p class="publisher">Publisher: (<%= book.publisher %>)</p>
+        <p class="description">Description: <%= book.description %></p>
+        <p class="weeks-on-list"><%= book.weeks_on_list %> weeks on list</p>
+        <%= link_to 'See all Editorial Reviews', book_path(id: book.id) %>
+      </div>
+    </div>
+  </div>
+<% end %>
